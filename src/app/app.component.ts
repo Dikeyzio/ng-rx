@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {filter, map} from 'rxjs/operators';
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
 import {isLoggedIn, isLoggedOut} from "./auth/auth.selectors";
+import {AuthActions} from "./auth/action-types";
 
 @Component({
   selector: 'app-root',
@@ -54,7 +55,9 @@ export class AppComponent implements OnInit {
 
     }
 
-    logout() {
+      logout() {
+
+      this.store.dispatch(AuthActions.logout())
 
     }
 
