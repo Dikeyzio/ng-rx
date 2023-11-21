@@ -15,6 +15,7 @@ export interface AuthState {
   user: User
 }
 
+
 export const initialAuthState: AuthState = {
   user: undefined
 }
